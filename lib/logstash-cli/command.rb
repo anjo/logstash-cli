@@ -1,6 +1,7 @@
 require 'logstash-cli/command/grep'
 require 'logstash-cli/command/tail'
 require 'logstash-cli/command/count'
+require 'logstash-cli/command/group'
 
 module LogstashCli
   module Command

@@ -91,6 +91,7 @@ module Grep
         $stderr.puts "\nSomething went wrong with the search. This is usually due to lucene query parsing of the 'grep' option"
         exit
       end
+      puts "#{search.to_json}"
 
       begin
         result = Array.new
@@ -99,7 +100,6 @@ module Grep
         running_result_size -= search.results.size
 
         search.results.sort {|a,b| a[:@timestamp] <=> b[:@timestamp] }.each do |res|
-
           had_fields = false
           metafields.each do |metafield|
             if metafield == 'fields' then
