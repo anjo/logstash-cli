@@ -107,6 +107,11 @@ module Grep
                 result << res[:@fields][field.to_sym]
               end
               had_fields = true
+            elsif metafield == 'timestamp' then
+              time = res["@#{metafield}"]
+              time = DateTime.strptime(time, "%FT%T")
+              time = "#{time.strftime("%m-%d %H:%M:%S.%L")}"
+              result << time
             else
               result << res["@#{metafield}".to_sym]
             end

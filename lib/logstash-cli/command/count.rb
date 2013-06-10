@@ -57,7 +57,7 @@ module Count
 
       # Results per index to show
       result_size = options[:size]
-
+puts ">>#{search.results.facets.values.last.keys.join(",")}<<"
       begin
         results = search.results.facets[countfield]
 

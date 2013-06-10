@@ -7,6 +7,7 @@ module LogstashCli
     include Grep
     include Tail
     include Count
+    include Group
 
     def _format(result,options)
       output = case options[:format]
